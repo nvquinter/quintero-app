@@ -1,12 +1,20 @@
+import ItemCount from "./ItemCount"
+
 const ItemListContainer = (props) => {
+  const onAdd=() => {}
   return (
-    <div className="container"> 
-    <div className="row">
-      <main  className="col-12">
-        <h2>{props.greeting}</h2>
-      </main>
+  <main>
+    <div className="container">
+      <div className="row">
+        <div className="col">
+          <h2>{props.greeting}</h2>
+        </div>
+        <div className="col">
+          <ItemCount stock={5} onAdd={onAdd} initial= {0} />
+        </div>
+      </div>
     </div>
-    </div>
+  </main> 
   )
 }
 
