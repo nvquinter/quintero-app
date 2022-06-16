@@ -1,8 +1,8 @@
-// import ItemCount from "./ItemCount"
 import React, { useEffect, useState } from 'react'
 import customFetch from '../customFech'
 import productos from '../productos'
 import ItemList from './ItemList'
+
 
 
 const ItemListContainer = (props) => {
@@ -20,7 +20,6 @@ const ItemListContainer = (props) => {
           <p className='subtitulo bg-dark text-white'>{props.greeting}</p>
         </div>
         <main className='main'>
-          {/* <ItemCount stock={5} onAdd={onAdd} initial= {0} /> */}
           <ItemList products= {items}/>
         </main> 
       </div>
