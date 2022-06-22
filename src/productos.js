@@ -4,6 +4,7 @@ const productos = [
         title: 'Cartera',
         precio: "6100",
         descripcion: 'Cartera Amayra',
+        category: 'Cartera',
         image: '/img/cartera01.png',
         stock: "10"
     },
@@ -12,6 +13,7 @@ const productos = [
         title: 'Mochila',
         precio: "5800",
         descripcion: 'Mochila Amayra',
+        category: 'Mochilas',
         image: '/img/mochila.png',
         stock:"5"
     },
@@ -20,6 +22,7 @@ const productos = [
         title: 'Billetera',
         precio: "1350",
         descripcion: 'Billetera Juvenil',
+        category: 'Billeteras',
         image: '/img/billetera.png',
         stock:"11"
     }

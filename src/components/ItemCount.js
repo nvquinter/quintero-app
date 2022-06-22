@@ -16,17 +16,15 @@ import {useState} from "react"
      }
   }
    return (
-     <div >
-         <p>{contador}</p>
-         <div >
-          <button onClick={aumentarContador}> + </button>
-          <button onClick={bajarContador}> - </button> 
-          <div>
+      <div>
+        
+        <button className="button" onClick={bajarContador}> - </button> 
+        <span className="contador">{contador}</span>
+        <button className="button" onClick={aumentarContador}> + </button>
+        <div>
           <button>Agregar al carrito</button>
-          </div>
         </div>
-        </div>
-   
+      </div>
    )
  }
  export default ItemCount

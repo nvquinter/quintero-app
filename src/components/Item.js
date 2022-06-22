@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 
 function Item({id, title, image, precio, descripcion}) {
 
@@ -8,7 +9,8 @@ function Item({id, title, image, precio, descripcion}) {
         <h1>{title}</h1>
         <h2>{descripcion}</h2>
         <p>Precio : ${precio}</p>
-        </article>
+        <Link to={`/detail/${id}`}>Ver Detalle</Link>
+    </article>
   )
 }
 
