@@ -4,7 +4,7 @@ const productos = [
         title: 'Cartera',
         precio: "6100",
         descripcion: 'Cartera Amayra',
-        category: 'Cartera',
+        categoryId: 'carteras',
         image: '/img/cartera01.png',
         stock: "10"
     },
@@ -13,7 +13,7 @@ const productos = [
         title: 'Mochila',
         precio: "5800",
         descripcion: 'Mochila Amayra',
-        category: 'Mochilas',
+        categoryId: 'mochilas',
         image: '/img/mochila.png',
         stock:"5"
     },
@@ -22,27 +22,28 @@ const productos = [
         title: 'Billetera',
         precio: "1350",
         descripcion: 'Billetera Juvenil',
-        category: 'Billeteras',
+        categoryId: 'billeteras',
         image: '/img/billetera.png',
         stock:"11"
     }
 ]
 
-const producto = {
-    id: 2,
-    title: 'Mochila',
-    precio: "5800",
-    descripcion: 'Mochila Amayra',
-    image: '/img/mochila.png',
-    stock: "5",
-};
+// const producto = {
+//     id: 2,
+//     title: 'Mochila',
+//     precio: "5800",
+//     descripcion: 'Mochila Amayra',
+//     categoryId: 'mochilas',
+//     image: '/img/mochila.png',
+//     stock: "5",
+// };
 
-export const traerProducto = () => {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve(producto);
-        }, 1000);
-    });
-};
+// export const traerProducto = () => {
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             resolve(producto);
+//         }, 1000);
+//     });
+// };
 
 export default productos;

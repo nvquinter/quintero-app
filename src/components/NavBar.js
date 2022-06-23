@@ -8,9 +8,7 @@ return (
     <div className="row">
         <nav className="navbar navbar-expand-lg bg-light navbar-dark bg-dark ">
         <div className="col"> 
-        <Link to="/">
             <h1 className="container-fluid p-3 mb-2 bg-dark text-white">Sigrid</h1>
-        </Link>
         </div>
             <div className="col ">
                <Link className="navbar-brand" to="/category/productos">Productos</Link>
@@ -18,7 +16,7 @@ return (
                 <span className="navbar-toggler-icon"></span>
                 </button>
                 </div>
-                <div className="col ">
+                <div className="col">
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav">
                     <li className="nav-item">
@@ -44,4 +42,4 @@ return (
 )
 }
 
-export default Nav
+export default Nav;
