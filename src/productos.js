@@ -1,6 +1,6 @@
 const productos = [
     {
-        id: 1,
+        id:'carteras',
         title: 'Cartera',
         precio: "6100",
         descripcion: 'Cartera Amayra',
@@ -9,7 +9,7 @@ const productos = [
         stock: "10"
     },
     {
-        id: 2,
+        id: 'mochilas',
         title: 'Mochila',
         precio: "5800",
         descripcion: 'Mochila Amayra',
@@ -18,7 +18,7 @@ const productos = [
         stock:"5"
     },
     {
-        id: 3,
+        id: 'billeteras',
         title: 'Billetera',
         precio: "1350",
         descripcion: 'Billetera Juvenil',
@@ -27,23 +27,5 @@ const productos = [
         stock:"11"
     }
 ]
-
-// const producto = {
-//     id: 2,
-//     title: 'Mochila',
-//     precio: "5800",
-//     descripcion: 'Mochila Amayra',
-//     categoryId: 'mochilas',
-//     image: '/img/mochila.png',
-//     stock: "5",
-// };
-
-// export const traerProducto = () => {
-//     return new Promise((resolve, reject) => {
-//         setTimeout(() => {
-//             resolve(producto);
-//         }, 1000);
-//     });
-// };
 
 export default productos;

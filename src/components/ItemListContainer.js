@@ -28,7 +28,7 @@ const ItemListContainer = (props) => {
         <div className='col-12'>
           <p className='subtitulo bg-dark text-white'>{props.greeting}</p>
         </div>
-        <div>
+        <div className='product-container'>
            {items?.length <= 0 ? <p>buscando productos...</p> : <ItemList products = {items}/>}
         </div>
       </div>

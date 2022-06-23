@@ -1,10 +1,10 @@
 import productos from './productos';
 
-export const customFetch = (time, task) => {
+export const customFetch = () => {
     return new Promise ((resolve) => {
         setTimeout(()=> {
-            resolve(task);
-        }, time)
+            resolve(productos);
+        },)
     })
 }
 export const getProductsById = (id) => {

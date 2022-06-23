@@ -4,7 +4,7 @@ import Item from './Item'
 function ItemList({products}) {
   return (
     products.map(p => 
-      // <section className='products-container'>
+    <section className='products-container'>
       <Item
         id={p.id} 
         title={p.title}
@@ -13,7 +13,7 @@ function ItemList({products}) {
         image={p.image}
         key={p.id}
       />
-        //  </section>
+    </section>
     )
   )
 }

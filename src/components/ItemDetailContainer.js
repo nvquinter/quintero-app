@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import ItemDetail from './ItemDetail';
-// import {traerProducto} from '../productos';
 import { useParams } from 'react-router-dom'
 import { getProductsById } from '../customFech'
 
@@ -9,7 +8,7 @@ const ItemDetailContainer = () => {
     const {id} = useParams()
 
     useEffect(() => {
-        getProductsById(parseInt(id))
+        getProductsById((id))
         .then(response => {
             setProduct(response)
         })
@@ -17,6 +16,5 @@ const ItemDetailContainer = () => {
 
     return <ItemDetail {...product} />;
 };
-
 
 export default ItemDetailContainer;
