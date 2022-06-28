@@ -3,6 +3,7 @@ import ItemDetail from './ItemDetail';
 import { useParams } from 'react-router-dom'
 import { getProductsById } from '../customFech'
 
+
 const ItemDetailContainer = () => {
     const [product, setProduct] = useState({});
     const {id} = useParams()

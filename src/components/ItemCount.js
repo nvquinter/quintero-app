@@ -16,7 +16,7 @@ import {useState} from "react"
      }
    }
 
-    const confirmarContador = (e) => {
+    const confirmarContador = () => {
      onAdd(contador)
      return contador
     }
@@ -26,7 +26,7 @@ import {useState} from "react"
         <button className="button" onClick={bajarContador}> - </button> 
         <span className="contador">{contador}</span>
         <button className="button" onClick={aumentarContador}> + </button>
-        {contador > 0 ?  <button  onClik={confirmarContador()}> Agregar al Carrito </button>: <></>}
+        {contador > 0 ?  <button  onClik={confirmarContador(contador)}> Agregar al Carrito </button>: <></>}
         
        
       </div>
