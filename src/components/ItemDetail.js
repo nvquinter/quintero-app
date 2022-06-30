@@ -15,9 +15,9 @@ const ItemDetail = ({item}) => {
         setConfirm(false);
       } else {
         return null;
+        }
     }
-
-    }
+    
     return (
         <div className='product-container'>
             <img src={item.image} alt={item.name} width="200" />
@@ -26,8 +26,7 @@ const ItemDetail = ({item}) => {
                 <h2>{item.description}</h2>
                 <h3>$ {item.precio}</h3>
                 <h4>Stock: {item.stock}</h4> 
-                <div> 
-                {confirm ? <ItemCount stock={item.stock} initial={1} onAdd={onAdd}/>: <div><Link to={`/cart`}>Terminar Compra</Link></div>}       
+                <div>       
                 {confirm ? <ItemCount stock={item.stock} initial={1} onAdd={onAdd}/>: <div><div><Link to={`/cart`}>Finalizar Compra</Link></div> <div><Link to='/'>Continuar comprando</Link></div></div> }        
                 </div>
             </div> 

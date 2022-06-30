@@ -24,11 +24,11 @@ import {useState} from "react"
    return (
       <div>
         <button className="button" onClick={bajarContador}> - </button> 
-        <span className="contador">{contador}</span>
+        <span className="contador"> {contador} </span>
         <button className="button" onClick={aumentarContador}> + </button>
-        {contador > 0 ?  <button  onClik={confirmarContador(contador)}> Agregar al Carrito </button>: <></>}
-        
-       
+        <div>
+        <button onClick={confirmarContador}> Agregar </button>
+        </div>
       </div>
    )
  }
