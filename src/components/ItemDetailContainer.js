@@ -5,7 +5,7 @@ import { getProductsById } from '../customFech'
 
 
 const ItemDetailContainer = () => {
-    const [product, setProduct] = useState({});
+    const [item, setProduct] = useState({});
     const {id} = useParams()
 
     useEffect(() => {
@@ -15,7 +15,7 @@ const ItemDetailContainer = () => {
         })
     }, [id])
 
-    return <ItemDetail  product = { product } />;
+    return <ItemDetail  item = { item } />;
 };
 
 export default ItemDetailContainer;

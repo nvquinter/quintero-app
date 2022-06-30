@@ -3,9 +3,9 @@ import { NavLink } from "react-router-dom"
 
 const CartWidget = () => {
   return (
-    <div> 
-      <NavLink to="/carrrito">Carrito {0} </NavLink> 
-    </div>
+    <> 
+       <NavLink to="/cart"><span>shopping_cart</span></NavLink>
+    </>
   )
 }
 

@@ -3,27 +3,32 @@ import ItemCount from "./ItemCount"
 import { Link } from 'react-router-dom';
 import {contexto} from "./CartContext"
 
-const ItemDetail = ({product}) => {  
-    const [desaparecer, setDesaparecer] = useState(0);
+const ItemDetail = ({item}) => {  
 
-     const onAdd = (cantidadSeleccionada) => {
-     setDesaparecer(cantidadSeleccionada)
-     }
-     const agregarProducto = useContext(contexto)
-   
+    const {agregarProducto} = useContext(contexto)
+    const [confirm, setConfirm] = useState(true)
+
+    const onAdd = (cantidadSeleccionada) =>{    
+      if (cantidadSeleccionada >= 1){
+        console.log(cantidadSeleccionada);
+        agregarProducto (item, cantidadSeleccionada)
+        setConfirm(false);
+      } else {
+        return null;
+    }
+
+    }
     return (
         <div className='product-container'>
-            <img src={product.image} alt={product.name} width="200" />
+            <img src={item.image} alt={item.name} width="200" />
             <div>
-                <h1>{product.title}</h1>
-                <h2>{product.description}</h2>
-                <h3>$ {product.precio}</h3>
-                <h4>Stock: {product.stock}</h4> 
-                <div>
-                <button>"Vaciar carrito"</button> 
-                </div> 
+                <h1>{item.title}</h1>
+                <h2>{item.description}</h2>
+                <h3>$ {item.precio}</h3>
+                <h4>Stock: {item.stock}</h4> 
                 <div> 
-                 {desaparecer ?  (<Link to={"/cart"}>Terminar mi compra</Link>) : (<ItemCount stock={product.stock} initial={1} onAdd={onAdd}/>) }             
+                {confirm ? <ItemCount stock={item.stock} initial={1} onAdd={onAdd}/>: <div><Link to={`/cart`}>Terminar Compra</Link></div>}       
+                {confirm ? <ItemCount stock={item.stock} initial={1} onAdd={onAdd}/>: <div><div><Link to={`/cart`}>Finalizar Compra</Link></div> <div><Link to='/'>Continuar comprando</Link></div></div> }        
                 </div>
             </div> 
         </div>

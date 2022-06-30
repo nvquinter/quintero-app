@@ -3,24 +3,24 @@ import {customFetch, getProductsByCategory} from '../customFech'
 import ItemList from './ItemList'
 import {useParams} from 'react-router-dom'
 
-const ItemListContainer = (props) => {
-  // const onAdd=() => {} 
+const ItemListContainer = (props) => { 
   const [items, setItems] = useState([])
-  const {categoryId} = useParams()
+  // const {categoryId} = useParams()
+  const {id} = useParams()
 
   useEffect(() => {
-    if(!categoryId) {
+    if(!id) {
       customFetch()
       .then(response => {
         setItems(response)
       })
   } else {
-      getProductsByCategory(categoryId)
+      getProductsByCategory(id)
         .then(response => {
           setItems(response)
         })
     }
-  }, [categoryId])
+  }, [id])
 
   return (
     <div className="container">
