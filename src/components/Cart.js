@@ -4,14 +4,14 @@ import { Link } from 'react-router-dom'
 import { contexto } from "./CartContext"
 
 const Cart = () => {
-  const {carrito, getSubtotal, cartLenght, getTotal, vaciarCarrito} = useContext(contexto)
+  const {carrito, getSubtotal, cartLenght, getTotal, vaciarCarrito, eliminarProducto} = useContext(contexto)
 
   return (
     <>
       {cartLenght() === 0 ? (
         <div>
           <div>
-            <p>Oops! Tu carrito está vacío. Por favor, agregá algún producto para poder continuar.</p>
+            <p>Tu carrito está vacío. Por favor, agregá algún producto para poder continuar.</p>
             <Link to='/'>volver al inicio</Link>
             </div>
         </div>
@@ -25,9 +25,12 @@ const Cart = () => {
                   <h3>${product.precio}.-</h3>
                   <p>Cantidad total: {product.cantidad}</p>
                 <div>
-                    <p>Importe Subtotal: ${parseFloat(getSubtotal(product.precio, product.cantidad))}</p>
-                  </div>
-                  <div>
+                  <p>Importe Subtotal: ${parseFloat(getSubtotal(product.precio, product.cantidad))}</p>
+                </div>
+                <div> 
+                  <button onClick={() => eliminarProducto(product.id)}>Eliminar Item</button>
+                </div>
+                <div>
                   <p>Importe Total: ${parseFloat(getTotal())}</p>
                 </div>
                 <div>

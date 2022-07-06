@@ -7,6 +7,7 @@ import Cart from "./components/Cart"
 import Checkout from "./components/Checkout"
 
 
+
 const App = () => {
   return (
     <MiProvider>

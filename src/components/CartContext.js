@@ -47,9 +47,13 @@ const MiProvider = ({children}) =>{
         })
         return Number(total)
     }
-    
+
+    const eliminarProducto = (id) => {
+        setCarrito (carrito.filter((item) => (item.id !== id)))
+    }
+
     return(
-        <Provider value={{carrito, agregarProducto, isInCart,  cartLenght, vaciarCarrito, getSubtotal, getTotal}}>
+        <Provider value={{carrito, agregarProducto, isInCart,  cartLenght, vaciarCarrito, getSubtotal, getTotal, eliminarProducto}}>
             {children}
         </Provider>
     )

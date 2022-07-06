@@ -1,25 +1,34 @@
 import React, { useEffect, useState } from 'react'
-import {customFetch, getProductsByCategory} from '../customFech'
 import ItemList from './ItemList'
 import {useParams} from 'react-router-dom'
+import {db} from "../firebase"
+import { getDocs, collection } from 'firebase/firestore'
+
 
 const ItemListContainer = (props) => { 
   const [items, setItems] = useState([])
-  const {id} = useParams()
+  const { categoryId } = useParams()
+ 
 
   useEffect(() => {
-    if(!id) {
-      customFetch()
-      .then(response => {
-        setItems(response)
-      })
-  } else {
-      getProductsByCategory(id)
-        .then(response => {
-          setItems(response)
-        })
-    }
-  }, [id])
+
+   const collectionproductos= collection (db, "productos")
+   const consulta = getDocs(collectionproductos)
+   consulta
+   .then((resultado)=>{
+    const productos_mapeados = resultado.docs.map(referencia =>{
+      const aux = referencia.data()
+      aux.id = referencia.id
+      return aux
+    })
+    setItems(productos_mapeados)
+
+    })
+   .catch((error) => {
+    console.log(error)
+    })
+
+  }, [categoryId])
 
   return (
     <div className="container">

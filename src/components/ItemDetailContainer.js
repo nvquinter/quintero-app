@@ -1,21 +1,27 @@
 import React, { useState, useEffect } from 'react';
 import ItemDetail from './ItemDetail';
 import { useParams } from 'react-router-dom'
-import { getProductsById } from '../customFech'
-
+import {collectionProductos} from "../firebase"
+import { doc, getDoc} from 'firebase/firestore';
 
 const ItemDetailContainer = () => {
     const [item, setProduct] = useState({});
     const {id} = useParams()
 
-    useEffect(() => {
-        getProductsById((id))
-        .then(response => {
-            setProduct(response)
-        })
-    }, [id])
+    useEffect(()=>{
+      const myItems = doc(collectionProductos, id)
+      getDoc(myItems).then((response)=>{
+        setProduct({
+          id: response.id, 
+          ...response.data(),
+        });
+      });
+    },
 
-    return <ItemDetail  item = { item } />;
-};
+    [id]);
 
-export default ItemDetailContainer;
+    return(
+      <ItemDetail item={item}/>)
+}
+
+ export default ItemDetailContainer;
