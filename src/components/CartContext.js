@@ -7,21 +7,34 @@ const MiProvider = ({children}) =>{
 
     const [carrito, setCarrito] = useState([])
 
-    const agregarProducto = (producto, cantidad) => {
-        if(isInCart(producto.id)){
-            let copia = carrito.findIndex((copia) => (copia.id === producto.id))
-            let nuevo_producto = [...carrito]
-            nuevo_producto[copia].cantidad += cantidad
-            setCarrito(nuevo_producto)            
+
+    const agregarProducto = (item, cantidad) => {
+        if (isInCart(item.id)) {
+            sumarCantidad(item, cantidad);
         } else {
-            const itemToAdd = {...producto, cantidad}
-            setCarrito([...carrito, itemToAdd])
+            setCarrito([...carrito, { ...item, cantidad }]);
         }
-    }
+    };
 
     const isInCart = (id) => {
         return carrito.some((item) => (item.id === id))
     }
+
+    const sumarCantidad = (item, cantidad) => {
+        const newProducts = carrito.map((prod) => {
+            if (prod.id === item.id) {
+                const newProduct = {
+                    ...prod,
+                    cantidad: prod.cantidad + cantidad,
+                };
+                return newProduct;
+            } else {
+                return prod;
+            }
+        });
+        
+        setCarrito(newProducts);
+    };
 
     const vaciarCarrito = () => { 
         setCarrito ([])
@@ -32,6 +45,7 @@ const MiProvider = ({children}) =>{
             carrito.forEach((item) => {
             quantity = quantity + item.cantidad
         })
+        return quantity
     }
     
     const getSubtotal = (precio, cantidad) => {
@@ -53,7 +67,7 @@ const MiProvider = ({children}) =>{
     }
 
     return(
-        <Provider value={{carrito, agregarProducto, isInCart,  cartLenght, vaciarCarrito, getSubtotal, getTotal, eliminarProducto}}>
+        <Provider value={{carrito, agregarProducto, isInCart, sumarCantidad, cartLenght, vaciarCarrito, getSubtotal, getTotal, eliminarProducto}}>
             {children}
         </Provider>
     )

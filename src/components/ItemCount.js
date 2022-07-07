@@ -22,12 +22,14 @@ import {useState} from "react"
     }
 
    return (
-      <div>
-        <button className="button" onClick={bajarContador}> - </button> 
-        <span className="contador"> {contador} </span>
-        <button className="button" onClick={aumentarContador}> + </button>
-        <div>
-        <button onClick={confirmarContador}> Agregar </button>
+      <div className="count">
+        <div className="buttons">
+          <button  onClick={bajarContador}> - </button> 
+          <p> {contador} </p>
+          <button onClick={aumentarContador}> + </button>
+        </div>
+        <div className="add-cart">
+          <button onClick={confirmarContador}> Agregar </button>
         </div>
       </div>
    )
