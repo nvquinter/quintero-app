@@ -33,5 +33,5 @@ De esta forma se inicia en forma local y se puede acceder en http://localhost:30
 Al realizar cualquier modificación en el código, se hará un reload mostrando los cambios.
 
 Gif
-app.gif
 
+./app.gif
