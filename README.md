@@ -1,18 +1,18 @@
-Tienda de Marroquineria
+# Tienda de Marroquineria
 
-Proyecto
+## Proyecto
 Este proyecto es un e-commerce de marroquineria, se busca demostrar la funcionalidad aprendida en el curso de React realizado por Coderhouse. En el podemos ver, las diferentes técnicas utilizadas para lograr un funcionamiento óptimo de lo que sería un carrito de compras.
 
-Herramientas utilizadas
+## Herramientas utilizadas
 
-Tecnologías
+## Tecnologías
 
-HTML5
-CSS3
-JavaScript
-Librerías y frameworks
-Node.js
-React
+* HTML5
+* CSS3
+* JavaScript
+* Librerías y frameworks
+* Node.js
+* React
 
 Base de datos
 Firestore
