@@ -1,6 +1,6 @@
 const productos = [
     {
-        id:'carteras',
+        // id:'carteras',
         title: 'Cartera',
         precio: "6100",
         descripcion: 'Cartera Amayra',
@@ -9,7 +9,7 @@ const productos = [
         stock: "10"
     },
     {
-        id: 'mochilas',
+        // id: 'mochilas',
         title: 'Mochila',
         precio: "5800",
         descripcion: 'Mochila Amayra',
@@ -18,7 +18,7 @@ const productos = [
         stock:"5"
     },
     {
-        id: 'billeteras',
+        // id: 'billeteras',
         title: 'Billetera',
         precio: "1350",
         descripcion: 'Billetera Juvenil',

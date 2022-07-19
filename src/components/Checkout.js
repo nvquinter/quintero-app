@@ -7,7 +7,7 @@ import Form  from './Form'
 import { addDoc, collection, serverTimestamp } from 'firebase/firestore'
 
 const Checkout = () => {
-  const [data, setData] = useState({ name: '', email: '', phone: '' });
+  const [data, setData] = useState({ name: '', apellido: '', email: '', phone: '' });
   const [orderId, setOrderId] = useState('');
 
   const {carrito, cartLenght, getTotal, vaciarCarrito} = useContext(contexto)
@@ -42,36 +42,39 @@ const handleSubmit = (e) => {
     });
   };
 
-  if (orderId !== '') {
-    return <h1>Gracias por tu compra, tu número de envío es: {orderId}</h1>;
+  if(orderId !== ''){
+    return (
+      <div>
+        <h2 className='subtitulo'>¡Muchas gracias por tu compra {(data.name).toUpperCase()}!</h2>
+        <p className='subtitulo'>Te enviamos un mail a {(data.email).toLowerCase()} con tu orden de compra ID: {orderId}.</p>              
+      </div>)
   }
+
   return (
-    <div className='product-container'>
-      {carrito.map((product) =>(
-          <div key={product.id}>
-            <img src={product.image} alt={product.title} width="200"/>
-            <h1>{product.title}</h1>
-            <Link to='/'><button>Seguir comprando</button></Link>
-            <p>Cantidad de items en total:{cartLenght()}</p>  
-            <p>Importe Total: ${parseFloat(getTotal())}</p>
-            <Link to="/"> <button onClick={vaciarCarrito}>Vaciar carro y Volver al inicio</button></Link>
-            <div className='subtitulo'>
-            <h2>Complete con sus datos</h2> 
-            </div>
-            <div className='product-container'>
-                <Form
-                  handleChange={handleChange}
-                  data={data}
-                  handleSubmit={handleSubmit}
-                />
-                </div>
-            <div>
-              <Link to="/"><button>Finalizar Compra</button></Link>   
-            </div>
-          </div>
-        )) 
-      } 
-    </div>    
+    <>
+      <div className='product-container'>
+        <Link to='/'><button>Seguir comprando</button></Link>
+      </div>
+      <div className='product-container'>
+        <p>Productos en total:{cartLenght()}</p>  
+      </div>
+      <div className='product-container'>
+        <p>Importe Total: ${parseFloat(getTotal())}</p>
+      </div>
+      <div className='product-container'>
+        <Link to="/"> <button onClick={vaciarCarrito}>Vaciar mi carrito y Volver al inicio</button></Link>
+      </div>
+      <div className='subtitulo'>
+          <h2>Completar</h2> 
+      </div>
+      <div className='product-container'>
+        <Form
+          handleChange={handleChange}
+          data={data}
+          handleSubmit={handleSubmit}
+        />
+      </div>
+    </> 
   )
 }
 

@@ -30,11 +30,9 @@ return (
                         </li>
                         </ul>
                         <div className="nav-item text-white">
-                        {/* <Link to="/cart"> */}
                             <CartWidget />
-                        {/* </Link> */}
                         </div>
-                    </div>       
+                    </div>  
                 </div> 
             </nav>
         </div>

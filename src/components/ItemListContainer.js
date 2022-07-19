@@ -30,7 +30,7 @@ const ItemListContainer = (props) => {
       console.log(error)
     })
 
-  }, [categoryId])
+  },[categoryId])
 
   return (
     <div className="container">
@@ -39,7 +39,7 @@ const ItemListContainer = (props) => {
           <p className='subtitulo bg-dark text-white'>{props.greeting}</p>
         </div>
         <div className='product-container'>
-           {items?.length <= 0 ? <p>buscando productos...</p> : <ItemList products = {items}/>}
+        {items?.length <= 0 ? <p>Buscando Productos...</p> : <ItemList products = {items}/>}
         </div>
       </div>
     </div>

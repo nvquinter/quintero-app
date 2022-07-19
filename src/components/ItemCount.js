@@ -22,16 +22,16 @@ import {useState} from "react"
     }
 
    return (
-      <div className="count">
-        <div className="buttons">
-          <button  onClick={bajarContador}> - </button> 
-          <p> {contador} </p>
-          <button onClick={aumentarContador}> + </button>
-        </div>
-        <div className="add-cart">
-          <button onClick={confirmarContador}> Agregar </button>
-        </div>
+    <>
+      <div className="btn-group" role="group" aria-label="Basic example">
+        <button type="button" className="btn btn-danger" onClick={bajarContador}> - </button> 
+        <spam className= "btn btn-danger"> {contador} </spam>
+        <button type="button" className="btn btn-danger" onClick={aumentarContador}> + </button>
       </div>
+      <div className="btn-group" role="group" aria-label="Basic example">
+        <button type="button" className="btn btn-danger" onClick={confirmarContador}> Agregar </button>
+      </div>
+    </> 
    )
  }
  export default ItemCount

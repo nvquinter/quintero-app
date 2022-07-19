@@ -22,7 +22,6 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   }
   
-
   main {
     padding: 1rem;
   }
@@ -70,6 +69,7 @@
     font-size: 20px;
     margin: 1rem 0;
   }
+
   .product-container {
     display: flex;
     flex-direction: row;
@@ -77,10 +77,11 @@
     align-items: center;
     font-size: 15px;
   }
+
   .shop {
     display: flex;
-    align-items: center;
-    
+    flex-direction: row;
+    align-items: center; 
   }
 
   .empty {
@@ -89,82 +90,57 @@
     align-items: center;
     margin-top: 20px;
     font-size: 40px;
-}
-.cart {
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  /* background-color: rgb(210, 96, 96); */
-  /* border-radius: 10zpx;
-  margin-top: 5px; */
-}
-.cartBtn {
-  margin-top: 60px;
-  width: 80%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-  .count {
-    margin-top: 10px;
-    background-color: rgb(210, 96, 96);
-    max-width: 10%;
-    padding: 4px;
-    display: flex;
-    flex-direction: column;
-    border-radius: 5px;
   }
 
-/* .buttons {
+  .empty p{
+    font-size: 20px;
+  }
+
+  .cart {
+    padding: 2rem;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-}
+    justify-content: center;
+  }
 
-.buttons button {
-    font-size: 26px;
-    border: none;
-    background-color: white;
-    padding: 5px;
-    border-radius: 5px;
-    cursor: pointer;
-}
+  .cart h1{
+    font-size: 15px;
+  }
 
-.buttons p {
-    width: 100%;
-    text-align: center;
-    font-size: 26px;
-    color: white;
-}
+  .cartBtn {
+    margin-top: 60px;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 
-.add-cart button {
-    width: 100%;
-    margin-top: 26px;
-    border-radius: 5px;
-    border: none;
-    background-color: white;
-    padding: 10px 0px;
-    cursor: pointer;
-}  */
-  
+  .infoCart {
+    background-color: rgb(191, 191, 191);
+    padding: 20px;
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px;
+  }
+
   .form {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 40px;
-}
+  }
 
-form {
+  form {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
-}
+  }
 
-form input {
+  form input {
     padding: 10px;
     margin: 10px;
-}
+  }
