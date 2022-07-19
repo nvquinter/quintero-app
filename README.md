@@ -34,4 +34,4 @@ Al realizar cualquier modificación en el código, se hará un reload mostrando 
 
 Gif
 
-./app.gif
+![Alt Text](./app.gif)
