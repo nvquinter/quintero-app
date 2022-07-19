@@ -15,16 +15,18 @@ Este proyecto es un e-commerce de marroquineria, se busca demostrar la funcional
 * React
 
 ### Base de datos
-Firestore
+* Firestore
 
-Gestor de paquetes
-npm
+### Gestor de paquetes
+* npm
 
-Control de versiones
-git
+### Control de versiones
+* git
 
+## Contacto
+[GitHub](https://github.com/nvquinter)
 
-En el directorio del proyecto se debe ingresar en la consola:
+### En el directorio del proyecto se debe ingresar en la consola:
 
 npm start
 
