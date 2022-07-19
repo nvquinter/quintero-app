@@ -14,7 +14,7 @@ Este proyecto es un e-commerce de marroquineria, se busca demostrar la funcional
 * Node.js
 * React
 
-Base de datos
+### Base de datos
 Firestore
 
 Gestor de paquetes
